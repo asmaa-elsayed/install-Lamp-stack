@@ -1,0 +1,41 @@
+---
+- name: install lamp stack on the server
+  hosts: 192.168.10.26
+  tasks:
+    - name: install Apache
+      yum:
+        name: httpd
+        state: latest
+    - name: enable httpd service and start it
+      service:
+        name: httpd
+        enabled: yes
+        state: started
+    - name: install MySQL 
+      yum: 
+        name: 
+          - mariadb-server
+          - mariadb
+        state: present
+    - name: enable MySQL service and start it
+      service:
+        name=mariadb
+        enabled=yes
+        state=started
+    - name: install PHP
+      yum:
+        name: php
+        state: latest
+    - name: Permit the web traffic on port 80 and 443
+      firewalld:
+        permanent: yes
+        immediate: yes
+        service: "{{ item }}"
+        state: enabled
+      with_items:
+        - http
+        - https 
+    - name: copy php file to /var/www/html/
+      copy:
+        src: /root/lamp_stack/index.php
+        dest: /var/www/html/index.php
