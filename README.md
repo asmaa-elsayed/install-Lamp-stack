@@ -1,4 +1,4 @@
-# install-Lamp-stack
+# install-Lamp-stack using Ansible
  - This repo is to
 	1. install Apache, PHP and MySql packages using ansible
  	2. start and enable them all
@@ -7,7 +7,7 @@
 **************************************************************************************************
 
 ## The setup environment:
-- I have 2 local virtual machines
+- I have 2 local virtual machines Centos8
 	1. ==> controller with ansible installed to push the configuration
 	2. ==> Target machine to receive the configuration from the ansible server. ip(192.168.10.26)
 ****************************************************************************************************
