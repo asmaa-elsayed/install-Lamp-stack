@@ -39,3 +39,8 @@
       copy:
         src: /root/lamp_stack/index.php
         dest: /var/www/html/index.php
+    - name: Check the page
+      uri:
+        url: http://192.168.10.26/index.php
+        method: GET
+        status_code: 200
