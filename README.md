@@ -1,9 +1,9 @@
 # install-Lamp-stack
- This repo is to
-	- install Apache, PHP and MySql packages using ansible
- 	- start and enable them all
-	- permit the web traffic on port 80 and 443 on the firewalld
-	- copy a sample php page (already created) from ansible server to the lamp stack machine.
+ - This repo is to
+	1. install Apache, PHP and MySql packages using ansible
+ 	2. start and enable them all
+	3. permit the web traffic on port 80 and 443 on the firewalld
+	4. copy a sample php page (already created) from ansible server to the lamp stack machine.
 **************************************************************************************************
 
 ## The setup environment:
